@@ -1,7 +1,7 @@
 # Start
 
 ```
-docker-compose up -d
+export HOST_IP=$(hostname -I | awk '{print $1}') && docker-compose up -d
 ```
 
 Node Swagger: http://127.0.0.1:12973/docs

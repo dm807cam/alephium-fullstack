@@ -92,6 +92,6 @@ services:
     security_opt:
       - no-new-privileges:true
     environment:
-      - VITE_NODE_URL=http://localhost:12973
-      - VITE_BACKEND_URL=http://localhost:9090
+      - VITE_NODE_URL=http://${HOST_IP}:12973
+      - VITE_BACKEND_URL=http://${HOST_IP}:9090
       - VITE_NETWORK_TYPE=mainnet
