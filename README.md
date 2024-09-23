@@ -38,12 +38,15 @@ Clone the Alephium Fullstack repository from GitHub:
 git clone https://github.com/dm807cam/alephium-fullstack
 ```
 
-### 5. Start Alephium Fullstack with Docker Compose
+### 5. Adjust machine's IP
+Replace the hardcoded IPs at the bottom of the compose file
+
+### 6. Start Alephium Fullstack with Docker Compose
 Navigate to the cloned repository directory, set the host IP environment variable, and start the services:
 
 ```
 cd alephium-fullstack
-export HOST_IP=$(hostname -I | awk '{print $1}') && docker-compose up -d
+docker-compose up -d
 ```
 This command will set up and run the Alephium Fullstack services in detached mode.
 
