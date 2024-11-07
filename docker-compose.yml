@@ -5,7 +5,7 @@ volumes:
 
 services:
   alephium:
-    image: alephium/alephium:v3.6.0
+    image: alephium/alephium:v3.8.8
     restart: 'no'
     logging:
       driver: 'local'
@@ -49,7 +49,7 @@ services:
       interval: 10s
 
   explorer-backend:
-    image: alephium/explorer-backend:v2.2.1
+    image: alephium/explorer-backend:v2.2.6
     depends_on:
       postgres:
         condition: service_healthy
@@ -83,7 +83,7 @@ services:
       - DB_PASSWORD=${POSTGRES_PASSWORD:-postgres}
 
   explorer-frontend:
-    image: alephium/explorer:1.10.1
+    image: alephium/explorer:1.10.9
     depends_on:
       - explorer-backend
     restart: unless-stopped
