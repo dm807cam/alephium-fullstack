@@ -21,3 +21,12 @@ services:
       test: ['CMD', 'curl', 'http://127.0.0.1:12973/infos/self-clique']
       timeout: 45s
 
+  nginx:
+    image: nginx:latest
+    restart: unless-stopped
+    ports:
+      - 80:80  # Expose HTTP
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf  # NGINX configuration
+    depends_on:
+      - alephium
